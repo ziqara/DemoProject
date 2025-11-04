@@ -99,6 +99,7 @@
     <Compile Include="Models\Clients\MySQLClientsModel.cs" />
     <Compile Include="Models\Users\IUsersRepository.cs" />
     <Compile Include="Models\Users\MySqlUsersModel.cs" />
+    <Compile Include="Models\Users\UsersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IClientView.cs" />
   </ItemGroup>

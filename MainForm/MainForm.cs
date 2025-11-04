@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using ClientCard;
 using DemoLib.DataModel.Clients;
+using DemoLib.DataModel.Users;
 using DemoLib.Models.Clients;
 
 namespace MainForm
@@ -10,8 +11,10 @@ namespace MainForm
     public partial class MainForm : Form
     {
         private List<Client> allClients_ = new List<Client>();
-        public MainForm()
+        private User currentUser_ = null;
+        public MainForm(User user)
         {
+            currentUser_ = user;
             InitializeComponent();
         }
 
