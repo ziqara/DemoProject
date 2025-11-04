@@ -36,8 +36,8 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.SearchByNameTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.AlphabetComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.cardClient = new ClientCard.Card();
             this.ClientsListBox = new System.Windows.Forms.ListBox();
+            this.cardClient = new ClientCard.Card();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.AlphabetComboBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(850, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(718, 38);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,6 +80,7 @@
             // editBtn
             // 
             this.editBtn.AutoToolTip = false;
+            this.editBtn.BackColor = System.Drawing.SystemColors.Control;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editBtn.Name = "editBtn";
@@ -90,7 +91,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(150, 1, 0, 2);
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(160, 1, 0, 2);
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(182, 35);
             this.toolStripLabel1.Text = "Поиск по названию клиента:";
@@ -101,22 +102,50 @@
             this.SearchByNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchByNameTextBox.Name = "SearchByNameTextBox";
             this.SearchByNameTextBox.Size = new System.Drawing.Size(100, 38);
+            this.SearchByNameTextBox.TextChanged += new System.EventHandler(this.SearchByNameTextBox_TextChanged);
             // 
             // AlphabetComboBox
             // 
             this.AlphabetComboBox.AutoSize = false;
             this.AlphabetComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.AlphabetComboBox.Items.AddRange(new object[] {
+            "А",
+            "Б",
+            "В",
+            "Г",
+            "Д",
+            "Е",
+            "Ё",
+            "Ж",
+            "З",
+            "И",
+            "Й",
+            "К",
+            "Л",
+            "М",
+            "Н",
+            "О",
+            "П",
+            "Р",
+            "С",
+            "Т",
+            "У",
+            "Ф",
+            "Х",
+            "Ц",
+            "Ч",
+            "Ш",
+            "Щ",
+            "Ъ",
+            "Ы",
+            "Ь",
+            "Э",
+            "Ю",
+            "Я"});
             this.AlphabetComboBox.Name = "AlphabetComboBox";
-            this.AlphabetComboBox.Size = new System.Drawing.Size(35, 23);
-            // 
-            // cardClient
-            // 
-            this.cardClient.BackColor = System.Drawing.Color.White;
-            this.cardClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardClient.Location = new System.Drawing.Point(239, 41);
-            this.cardClient.Name = "cardClient";
-            this.cardClient.Size = new System.Drawing.Size(600, 301);
-            this.cardClient.TabIndex = 2;
+            this.AlphabetComboBox.Size = new System.Drawing.Size(45, 38);
+            this.AlphabetComboBox.SelectedIndexChanged += new System.EventHandler(this.AlphabetComboBox_SelectedIndexChanged);
+            this.AlphabetComboBox.TextChanged += new System.EventHandler(this.AlphabetComboBox_TextChanged);
             // 
             // ClientsListBox
             // 
@@ -125,16 +154,26 @@
             this.ClientsListBox.FormattingEnabled = true;
             this.ClientsListBox.Location = new System.Drawing.Point(12, 41);
             this.ClientsListBox.Name = "ClientsListBox";
-            this.ClientsListBox.Size = new System.Drawing.Size(205, 301);
+            this.ClientsListBox.Size = new System.Drawing.Size(205, 249);
             this.ClientsListBox.TabIndex = 0;
+            this.ClientsListBox.SelectedIndexChanged += new System.EventHandler(this.ClientsListBox_SelectedIndexChanged);
+            // 
+            // cardClient
+            // 
+            this.cardClient.BackColor = System.Drawing.Color.White;
+            this.cardClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardClient.Location = new System.Drawing.Point(229, 40);
+            this.cardClient.Name = "cardClient";
+            this.cardClient.Size = new System.Drawing.Size(479, 250);
+            this.cardClient.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 353);
-            this.Controls.Add(this.ClientsListBox);
+            this.ClientSize = new System.Drawing.Size(718, 301);
             this.Controls.Add(this.cardClient);
+            this.Controls.Add(this.ClientsListBox);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -156,8 +195,8 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox SearchByNameTextBox;
         private System.Windows.Forms.ToolStripComboBox AlphabetComboBox;
-        private ClientCard.Card cardClient;
         private System.Windows.Forms.ListBox ClientsListBox;
+        private ClientCard.Card cardClient;
     }
 }
 

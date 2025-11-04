@@ -32,6 +32,7 @@ namespace DemoLib.Models.Clients
             {
                 throw ex;
             }
+
         }
 
         public List<Client> ReadAllClients()

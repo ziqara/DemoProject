@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DemoLib.Views;
 using DemoLib.DataModel.Clients;
+using System.Diagnostics;
 
 namespace ClientCard
 {
