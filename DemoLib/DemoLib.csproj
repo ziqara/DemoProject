@@ -98,11 +98,11 @@
     <Compile Include="DataModel\Users\UserRole.cs" />
     <Compile Include="Models\Clients\IClientsModel.cs" />
     <Compile Include="Models\Clients\MySQLClientsModel.cs" />
+    <Compile Include="Models\Users\IUsersRepository.cs" />
+    <Compile Include="Models\Users\MySqlUsersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Users\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
