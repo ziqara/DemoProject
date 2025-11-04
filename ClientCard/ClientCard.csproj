@@ -56,5 +56,11 @@
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoLib\DemoLib.csproj">
+      <Project>{8791f37c-171e-4073-b85a-3e9dd462cf97}</Project>
+      <Name>DemoLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
