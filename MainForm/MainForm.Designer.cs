@@ -34,10 +34,10 @@
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.editBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.card1 = new ClientCard.Card();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.SearchByNameTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.AlphabetComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.cardClient = new ClientCard.Card();
+            this.ClientsListBox = new System.Windows.Forms.ListBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +48,8 @@
             this.deleteBtn,
             this.editBtn,
             this.toolStripLabel1,
-            this.toolStripTextBox1,
-            this.toolStripComboBox1});
+            this.SearchByNameTextBox,
+            this.AlphabetComboBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(850, 38);
@@ -95,49 +95,51 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(182, 35);
             this.toolStripLabel1.Text = "Поиск по названию клиента:";
             // 
-            // toolStripTextBox1
+            // SearchByNameTextBox
             // 
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 38);
+            this.SearchByNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchByNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchByNameTextBox.Name = "SearchByNameTextBox";
+            this.SearchByNameTextBox.Size = new System.Drawing.Size(100, 38);
             // 
-            // toolStripComboBox1
+            // AlphabetComboBox
             // 
-            this.toolStripComboBox1.AutoSize = false;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(35, 21);
+            this.AlphabetComboBox.AutoSize = false;
+            this.AlphabetComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.AlphabetComboBox.Name = "AlphabetComboBox";
+            this.AlphabetComboBox.Size = new System.Drawing.Size(35, 23);
             // 
-            // card1
+            // cardClient
             // 
-            this.card1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.card1.Location = new System.Drawing.Point(239, 41);
-            this.card1.Name = "card1";
-            this.card1.Size = new System.Drawing.Size(600, 301);
-            this.card1.TabIndex = 2;
+            this.cardClient.BackColor = System.Drawing.Color.White;
+            this.cardClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardClient.Location = new System.Drawing.Point(239, 41);
+            this.cardClient.Name = "cardClient";
+            this.cardClient.Size = new System.Drawing.Size(600, 301);
+            this.cardClient.TabIndex = 2;
             // 
-            // listBox1
+            // ClientsListBox
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.CausesValidation = false;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(205, 301);
-            this.listBox1.TabIndex = 0;
+            this.ClientsListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ClientsListBox.CausesValidation = false;
+            this.ClientsListBox.FormattingEnabled = true;
+            this.ClientsListBox.Location = new System.Drawing.Point(12, 41);
+            this.ClientsListBox.Name = "ClientsListBox";
+            this.ClientsListBox.Size = new System.Drawing.Size(205, 301);
+            this.ClientsListBox.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 353);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.card1);
+            this.Controls.Add(this.ClientsListBox);
+            this.Controls.Add(this.cardClient);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "«СтройПроект»";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,10 +154,10 @@
         private System.Windows.Forms.ToolStripButton deleteBtn;
         private System.Windows.Forms.ToolStripButton editBtn;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private ClientCard.Card card1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripTextBox SearchByNameTextBox;
+        private System.Windows.Forms.ToolStripComboBox AlphabetComboBox;
+        private ClientCard.Card cardClient;
+        private System.Windows.Forms.ListBox ClientsListBox;
     }
 }
 
