@@ -7,21 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DemoLib.DataModel.Clients;
 using DemoLib.DataModel.Orders;
+using DemoLib.Models.Clients;
 
 namespace MainForm
 {
     public partial class ClientOrdersForm : Form
     {
-        public ClientOrdersForm()
+        private Client client_;
+        private MySQLClientsModel model_;
+        public ClientOrdersForm(Client client, MySQLClientsModel model)
         {
             InitializeComponent();
+            client_ = client;
+            model_ = model;
         }
 
-        public void SetOrder(Order order)
+        private void ClientOrdersForm_Load(object sender, EventArgs e)
         {
             OrdersTable.DataSource = null;
-            OrdersTable.DataSource = order.GetRecords();
+            OrdersTable.DataSource = client_.order.GetRecords();
         }
     }
 }

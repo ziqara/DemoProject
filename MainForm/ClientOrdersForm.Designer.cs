@@ -43,7 +43,7 @@
             this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrdersTable.Location = new System.Drawing.Point(0, 0);
             this.OrdersTable.Name = "OrdersTable";
-            this.OrdersTable.Size = new System.Drawing.Size(800, 450);
+            this.OrdersTable.Size = new System.Drawing.Size(620, 282);
             this.OrdersTable.TabIndex = 0;
             // 
             // toolStrip1
@@ -53,7 +53,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(620, 43);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -65,7 +65,6 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(40, 40);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripButton2
             // 
@@ -75,17 +74,17 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(40, 40);
-            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // ClientOrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 282);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.OrdersTable);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientOrdersForm";
+            this.Load += new System.EventHandler(this.ClientOrdersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersTable)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

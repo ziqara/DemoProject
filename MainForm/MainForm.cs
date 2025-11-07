@@ -175,5 +175,24 @@ namespace MainForm
                 ClientsListBox.SelectedIndex = 0;
             }
         }
+
+        private void cardClient_MouseClick(object sender, MouseEventArgs e)
+        {
+            var item = ClientsListBox.SelectedItem;
+            if (item == null)
+            {
+                return;
+            }
+
+            Client client = item as Client;
+            if (client == null)
+            {
+
+                return;
+            }
+            ClientOrdersForm ordersForm = new ClientOrdersForm(client, model_);
+            ordersForm.Text = "Заказы клиента " + client.Name;
+            ordersForm.ShowDialog();
+        }
     }
 }

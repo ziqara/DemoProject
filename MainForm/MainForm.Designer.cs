@@ -169,6 +169,7 @@
             this.cardClient.Name = "cardClient";
             this.cardClient.Size = new System.Drawing.Size(479, 250);
             this.cardClient.TabIndex = 1;
+            this.cardClient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cardClient_MouseClick);
             // 
             // MainForm
             // 
