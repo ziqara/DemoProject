@@ -33,9 +33,9 @@
             this.desBox = new System.Windows.Forms.TextBox();
             this.phoneBox = new System.Windows.Forms.TextBox();
             this.mailBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.imageBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.avatarBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,14 +73,14 @@
             this.mailBox.Size = new System.Drawing.Size(100, 20);
             this.mailBox.TabIndex = 3;
             // 
-            // button1
+            // imageBtn
             // 
-            this.button1.Location = new System.Drawing.Point(112, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Загрузить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.imageBtn.Location = new System.Drawing.Point(112, 116);
+            this.imageBtn.Name = "imageBtn";
+            this.imageBtn.Size = new System.Drawing.Size(100, 23);
+            this.imageBtn.TabIndex = 4;
+            this.imageBtn.Text = "Загрузить";
+            this.imageBtn.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -91,15 +91,16 @@
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addBtn
             // 
-            this.button3.Location = new System.Drawing.Point(218, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Сохранить";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.addBtn.Location = new System.Drawing.Point(218, 145);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(100, 23);
+            this.addBtn.TabIndex = 6;
+            this.addBtn.Text = "Сохранить";
+            this.addBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // avatarBox
             // 
@@ -165,9 +166,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.avatarBox);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.imageBtn);
             this.Controls.Add(this.mailBox);
             this.Controls.Add(this.phoneBox);
             this.Controls.Add(this.desBox);
@@ -186,9 +187,9 @@
         private System.Windows.Forms.TextBox desBox;
         private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.TextBox mailBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button imageBtn;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.PictureBox avatarBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

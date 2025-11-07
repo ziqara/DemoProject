@@ -27,5 +27,68 @@ namespace MainForm
             type_ = type;
             newClient_ = client;
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nameBox.Text))
+            {
+                MessageBox.Show("Поле 'Имя' не может быть пустым!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nameBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(desBox.Text))
+            {
+                MessageBox.Show("Поле 'Описание' не может быть пустым!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                desBox.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(phoneBox.Text))
+            {
+                MessageBox.Show("Поле 'Телефон' не может быть пустым!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                phoneBox.Focus();
+                return;
+            }
+
+            string phone = phoneBox.Text.Trim();
+            if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^[\d\s\-\+\(\)]+$"))
+            {
+                MessageBox.Show("Некорректный формат телефона!\nТелефон должен содержать только цифры и символы: - + ( )",
+                                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                phoneBox.Focus();
+                phoneBox.SelectAll();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(mailBox.Text))
+            {
+                MessageBox.Show("Поле 'Email' не может быть пустым!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mailBox.Focus();
+                return;
+            }
+
+            string email = mailBox.Text.Trim();
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Некорректный формат email!\nПример: example@mail.ru",
+                                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mailBox.Focus();
+                mailBox.SelectAll();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(selectedImagePath_))
+            {
+                MessageBox.Show("Необходимо выбрать изображение клиента!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                imageBtn.Focus();
+                return;
+            }
+        }
     }
 }
