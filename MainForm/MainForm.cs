@@ -18,15 +18,13 @@ namespace MainForm
         {
             currentUser_ = user;
             InitializeComponent();
-
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            MySQLClientsModel model = new MySQLClientsModel();
+            model_ = new MySQLClientsModel();
 
-            allClients_ = model.ReadAllClients();
+            allClients_ = model_.ReadAllClients(); 
             ShowClients(allClients_);
         }
 

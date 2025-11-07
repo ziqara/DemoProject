@@ -14,8 +14,8 @@ namespace DemoLib.Models.Clients
 {
     public class MySQLClientsModel : IClientsModel
     {
+        private List<Client> clients = new List<Client>();
         private const string connStr = "server=localhost;user=root;database=clients_db;password=1234567;port=3307;";
-        List<Client> clients = new List<Client>();
 
         public int GetClientsCount()
         {
@@ -36,7 +36,6 @@ namespace DemoLib.Models.Clients
             {
                 throw ex;
             }
-
         }
 
         public List<Client> ReadAllClients()
@@ -96,6 +95,10 @@ namespace DemoLib.Models.Clients
 
         public int GenerateNextID()
         {
+            if (clients == null || clients.Count == 0)
+            {
+                return 1;
+            }
             return clients.Count + 1;
         }
 
