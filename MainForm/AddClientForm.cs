@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -110,6 +111,43 @@ namespace MainForm
                 newClient_.Mail = mailBox.Text;
                 newClient_.ImagePath = selectedImagePath_;
                 DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void imageBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                openFileDialog.Title = "Выберите изображение клиента";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    try
+                    {
+                        string solutionDir = Directory.GetParent(Application.StartupPath).Parent.Parent.FullName;
+                        string resourcesDir = Path.Combine(solutionDir, "Resources", "img");
+
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(imagePath);
+                        string destinationPath = Path.Combine(resourcesDir, fileName);
+
+                        File.Copy(imagePath, destinationPath, true);
+
+                        selectedImagePath_ = $"../../../Resources/img/{fileName}";
+
+                        MessageBox.Show($"Изображение успешно загружено!", "Успех",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        avatarBox.ImageLocation = selectedImagePath_;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ошибка при загрузке изображения: {ex.Message}", "Ошибка",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

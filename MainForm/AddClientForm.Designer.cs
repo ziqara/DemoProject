@@ -81,6 +81,7 @@
             this.imageBtn.TabIndex = 4;
             this.imageBtn.Text = "Загрузить";
             this.imageBtn.UseVisualStyleBackColor = true;
+            this.imageBtn.Click += new System.EventHandler(this.imageBtn_Click);
             // 
             // button2
             // 
