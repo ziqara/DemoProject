@@ -178,5 +178,10 @@ namespace MainForm
                 this.Text = "Редактирование клиента " + newClient_.Name;
             }
         }
+
+        public Client GetNewClient()
+        {
+            return newClient_;
+        }
     }
 }
