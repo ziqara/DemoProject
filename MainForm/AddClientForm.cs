@@ -155,5 +155,28 @@ namespace MainForm
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void AddClientForm_Load(object sender, EventArgs e)
+        {
+            if (type_ == 0)
+            {
+                nameBox.Text = string.Empty;
+                desBox.Text = string.Empty;
+                phoneBox.Text = string.Empty;
+                mailBox.Text = string.Empty;
+                selectedImagePath_ = null;
+            }
+
+            if (type_ == 1)
+            {
+                nameBox.Text = newClient_.Name;
+                desBox.Text = newClient_.Description;
+                phoneBox.Text = newClient_.Phone;
+                mailBox.Text = newClient_.Mail;
+                selectedImagePath_ = newClient_.ImagePath;
+                avatarBox.ImageLocation = selectedImagePath_;
+                this.Text = "Редактирование клиента " + newClient_.Name;
+            }
+        }
     }
 }

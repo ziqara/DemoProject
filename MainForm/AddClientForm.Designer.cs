@@ -177,6 +177,7 @@
             this.Controls.Add(this.nameBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddClientForm";
+            this.Load += new System.EventHandler(this.AddClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
