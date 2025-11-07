@@ -33,6 +33,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.sortDownBtn = new System.Windows.Forms.ToolStripButton();
+            this.sortUpBtn = new System.Windows.Forms.ToolStripButton();
+            this.refrezhBtn = new System.Windows.Forms.ToolStripButton();
+            this.sortLabel = new System.Windows.Forms.ToolStripLabel();
+            this.refrezhLabel = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersTable)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +58,12 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBtn,
-            this.deleteBtn});
+            this.deleteBtn,
+            this.sortLabel,
+            this.sortDownBtn,
+            this.sortUpBtn,
+            this.refrezhLabel,
+            this.refrezhBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(543, 43);
@@ -80,6 +90,50 @@
             this.deleteBtn.Size = new System.Drawing.Size(40, 40);
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
+            // sortDownBtn
+            // 
+            this.sortDownBtn.AutoSize = false;
+            this.sortDownBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.sortDownBtn.Image = ((System.Drawing.Image)(resources.GetObject("sortDownBtn.Image")));
+            this.sortDownBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sortDownBtn.Name = "sortDownBtn";
+            this.sortDownBtn.Size = new System.Drawing.Size(40, 40);
+            this.sortDownBtn.Click += new System.EventHandler(this.sortDownBtn_Click);
+            // 
+            // sortUpBtn
+            // 
+            this.sortUpBtn.AutoSize = false;
+            this.sortUpBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.sortUpBtn.Image = ((System.Drawing.Image)(resources.GetObject("sortUpBtn.Image")));
+            this.sortUpBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sortUpBtn.Name = "sortUpBtn";
+            this.sortUpBtn.Size = new System.Drawing.Size(40, 40);
+            this.sortUpBtn.Click += new System.EventHandler(this.sortUpBtn_Click);
+            // 
+            // refrezhBtn
+            // 
+            this.refrezhBtn.AutoSize = false;
+            this.refrezhBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.refrezhBtn.Image = ((System.Drawing.Image)(resources.GetObject("refrezhBtn.Image")));
+            this.refrezhBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refrezhBtn.Name = "refrezhBtn";
+            this.refrezhBtn.Size = new System.Drawing.Size(40, 40);
+            this.refrezhBtn.Click += new System.EventHandler(this.refrezhBtn_Click);
+            // 
+            // sortLabel
+            // 
+            this.sortLabel.Margin = new System.Windows.Forms.Padding(50, 1, 0, 2);
+            this.sortLabel.Name = "sortLabel";
+            this.sortLabel.Size = new System.Drawing.Size(155, 40);
+            this.sortLabel.Text = "Сортировка по стоимости:";
+            // 
+            // refrezhLabel
+            // 
+            this.refrezhLabel.Margin = new System.Windows.Forms.Padding(50, 1, 0, 2);
+            this.refrezhLabel.Name = "refrezhLabel";
+            this.refrezhLabel.Size = new System.Drawing.Size(45, 40);
+            this.refrezhLabel.Text = "Сброс:";
+            // 
             // ClientOrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,5 +159,10 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton addBtn;
         private System.Windows.Forms.ToolStripButton deleteBtn;
+        private System.Windows.Forms.ToolStripButton sortDownBtn;
+        private System.Windows.Forms.ToolStripButton sortUpBtn;
+        private System.Windows.Forms.ToolStripButton refrezhBtn;
+        private System.Windows.Forms.ToolStripLabel sortLabel;
+        private System.Windows.Forms.ToolStripLabel refrezhLabel;
     }
 }

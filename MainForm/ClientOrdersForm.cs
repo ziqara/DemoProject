@@ -28,13 +28,12 @@ namespace MainForm
         private void ClientOrdersForm_Load(object sender, EventArgs e)
         {
             RefreshOrdersTable();
-            this.Text = "Заказы клиента " + client_.Name;
+            this.Text = "Заказы клиента - " + client_.Name;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
             AddOrderForm addForm = new AddOrderForm();
-            addForm.Text = "Добавление заказа клиента " + client_.Name;
             DialogResult result = addForm.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -94,6 +93,25 @@ namespace MainForm
                 MessageBox.Show($"Ошибка при удалении заказа: {ex.Message}", "Ошибка",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void sortDownBtn_Click(object sender, EventArgs e)
+        {
+            List<OrderRecord> sortedOrders = orders_.OrderBy(order => order.Cost).ToList();
+            OrdersTable.DataSource = null;
+            OrdersTable.DataSource = sortedOrders;
+        }
+
+        private void sortUpBtn_Click(object sender, EventArgs e)
+        {
+            List<OrderRecord> sortedOrders = orders_.OrderByDescending(order => order.Cost).ToList();
+            OrdersTable.DataSource = null;
+            OrdersTable.DataSource = sortedOrders;
+        }
+
+        private void refrezhBtn_Click(object sender, EventArgs e)
+        {
+            RefreshOrdersTable();
         }
     }
 }

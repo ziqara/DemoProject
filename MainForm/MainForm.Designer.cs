@@ -102,6 +102,7 @@
             // SearchByNameTextBox
             // 
             this.SearchByNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchByNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchByNameTextBox.Name = "SearchByNameTextBox";
             this.SearchByNameTextBox.Size = new System.Drawing.Size(100, 38);
             this.SearchByNameTextBox.TextChanged += new System.EventHandler(this.SearchByNameTextBox_TextChanged);
