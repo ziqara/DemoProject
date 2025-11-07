@@ -143,7 +143,7 @@
             "Ю",
             "Я"});
             this.AlphabetComboBox.Name = "AlphabetComboBox";
-            this.AlphabetComboBox.Size = new System.Drawing.Size(45, 38);
+            this.AlphabetComboBox.Size = new System.Drawing.Size(45, 23);
             this.AlphabetComboBox.SelectedIndexChanged += new System.EventHandler(this.AlphabetComboBox_SelectedIndexChanged);
             this.AlphabetComboBox.TextChanged += new System.EventHandler(this.AlphabetComboBox_TextChanged);
             // 
