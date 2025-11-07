@@ -77,6 +77,7 @@
             this.deleteBtn.Size = new System.Drawing.Size(55, 35);
             this.deleteBtn.Text = "Удалить";
             this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // editBtn
             // 
@@ -179,6 +180,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "«СтройПроект»";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);

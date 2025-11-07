@@ -148,5 +148,32 @@ namespace MainForm
                 return;
             }
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            var item = ClientsListBox.SelectedItem;
+            if (item == null)
+            {
+                return;
+            }
+
+            Client client = item as Client;
+            if (client == null)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Вы уверены, что хотите удалить клиента {client.Name}?", "Подтверждение удаления",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (result == DialogResult.Yes)
+            {
+                model_.RemoveClient(client);
+                allClients_.Clear();
+                allClients_ = model_.ReadAllClients();
+                ShowClients(allClients_);
+                ClientsListBox.SelectedIndex = 0;
+            }
+        }
     }
 }
