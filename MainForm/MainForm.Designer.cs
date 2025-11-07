@@ -88,6 +88,7 @@
             this.editBtn.Size = new System.Drawing.Size(91, 35);
             this.editBtn.Text = "Редактировать";
             this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // toolStripLabel1
             // 

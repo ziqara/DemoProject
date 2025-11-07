@@ -119,5 +119,34 @@ namespace MainForm
                 return;
             }
         }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            var item = ClientsListBox.SelectedItem;
+            if (item == null)
+            {
+                return;
+            }
+
+            Client client = item as Client;
+            if (client == null)
+            {
+                return;
+            }
+            AddClientForm addForm = new AddClientForm(model_, 1, client);
+            DialogResult result = addForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                model_.EditClient(addForm.GetNewClient());
+                allClients_.Clear();
+                allClients_ = model_.ReadAllClients();
+                ShowClients(allClients_);
+            }
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+        }
     }
 }
