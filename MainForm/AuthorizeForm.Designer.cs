@@ -33,7 +33,6 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.enterBtn = new System.Windows.Forms.Button();
-            this.guestBtn = new System.Windows.Forms.Button();
             this.loginBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -69,20 +68,11 @@
             // 
             this.enterBtn.Location = new System.Drawing.Point(84, 59);
             this.enterBtn.Name = "enterBtn";
-            this.enterBtn.Size = new System.Drawing.Size(80, 23);
+            this.enterBtn.Size = new System.Drawing.Size(181, 23);
             this.enterBtn.TabIndex = 4;
             this.enterBtn.Text = "Войти";
             this.enterBtn.UseVisualStyleBackColor = true;
             this.enterBtn.Click += new System.EventHandler(this.enterBtn_Click);
-            // 
-            // guestBtn
-            // 
-            this.guestBtn.Location = new System.Drawing.Point(166, 59);
-            this.guestBtn.Name = "guestBtn";
-            this.guestBtn.Size = new System.Drawing.Size(101, 23);
-            this.guestBtn.TabIndex = 5;
-            this.guestBtn.Text = "Предпросмотр";
-            this.guestBtn.UseVisualStyleBackColor = true;
             // 
             // loginBox
             // 
@@ -98,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 92);
             this.Controls.Add(this.loginBox);
-            this.Controls.Add(this.guestBtn);
             this.Controls.Add(this.enterBtn);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.passwordLabel);
@@ -120,7 +109,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button enterBtn;
-        private System.Windows.Forms.Button guestBtn;
         private System.Windows.Forms.ComboBox loginBox;
     }
 }

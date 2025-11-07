@@ -17,6 +17,7 @@ namespace MainForm
     {
         private Client client_;
         private MySQLClientsModel model_;
+        List<OrderRecord> orders_;
         public ClientOrdersForm(Client client, MySQLClientsModel model)
         {
             InitializeComponent();
@@ -26,8 +27,33 @@ namespace MainForm
 
         private void ClientOrdersForm_Load(object sender, EventArgs e)
         {
+            RefreshOrdersTable();
+            this.Text = "Заказы клиента " + client_.Name;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            AddOrderForm addForm = new AddOrderForm();
+            addForm.Text = "Добавление заказа клиента " + client_.Name;
+            DialogResult result = addForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                model_.AddOrder(addForm.GetNewRecord(), client_.ID);
+                client_.order.AddRecord(addForm.GetNewRecord());
+                RefreshOrdersTable();
+            }
+        }
+
+        private void RefreshOrdersTable()
+        {
             OrdersTable.DataSource = null;
-            OrdersTable.DataSource = client_.order.GetRecords();
+            orders_ = client_.order.GetRecords();
+            OrdersTable.DataSource = orders_;
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

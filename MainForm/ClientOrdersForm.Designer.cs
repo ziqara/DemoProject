@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientOrdersForm));
             this.OrdersTable = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.addBtn = new System.Windows.Forms.ToolStripButton();
+            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersTable)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,37 +43,41 @@
             this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.OrdersTable.Location = new System.Drawing.Point(0, 46);
             this.OrdersTable.Name = "OrdersTable";
+            this.OrdersTable.ReadOnly = true;
+            this.OrdersTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OrdersTable.Size = new System.Drawing.Size(543, 236);
             this.OrdersTable.TabIndex = 0;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.addBtn,
+            this.deleteBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(543, 43);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // addBtn
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(40, 40);
+            this.addBtn.AutoSize = false;
+            this.addBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
+            this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(40, 40);
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // toolStripButton2
+            // deleteBtn
             // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(40, 40);
+            this.deleteBtn.AutoSize = false;
+            this.deleteBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(40, 40);
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // ClientOrdersForm
             // 
@@ -98,7 +102,7 @@
 
         private System.Windows.Forms.DataGridView OrdersTable;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton addBtn;
+        private System.Windows.Forms.ToolStripButton deleteBtn;
     }
 }
