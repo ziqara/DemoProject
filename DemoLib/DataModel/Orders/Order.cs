@@ -19,5 +19,10 @@ namespace DemoLib.DataModel.Orders
         {
             return records_;
         }
+
+        public void RemoveRecord(OrderRecord record)
+        {
+            records_.Remove(record);
+        }
     }
 }

@@ -53,7 +53,47 @@ namespace MainForm
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            
+            var row = OrdersTable.CurrentRow;
+            var order = row.DataBoundItem as OrderRecord;
+            if (order == null)
+            {
+                MessageBox.Show("Не удалось получить данные заказа", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            var dr = MessageBox.Show(
+                $"Вы уверены, что хотите удалить заказ?\nНаименование: {order.NameProduct}",
+                "Подтверждение удаления",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (dr != DialogResult.Yes) 
+            { 
+                return; 
+            }
+                
+
+            try
+            {
+                model_.DeleteOrder(order);
+                client_.order.RemoveRecord(order);
+
+                RefreshOrdersTable();
+
+                MessageBox.Show("Заказ успешно удалён", "Готово",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (OrdersTable.Rows.Count > 0)
+                    OrdersTable.Rows[0].Selected = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при удалении заказа: {ex.Message}", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

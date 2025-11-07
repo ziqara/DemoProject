@@ -42,6 +42,7 @@
             this.OrdersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.OrdersTable.Location = new System.Drawing.Point(0, 46);
+            this.OrdersTable.MultiSelect = false;
             this.OrdersTable.Name = "OrdersTable";
             this.OrdersTable.ReadOnly = true;
             this.OrdersTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
