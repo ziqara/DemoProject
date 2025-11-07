@@ -40,10 +40,10 @@
             // OrdersTable
             // 
             this.OrdersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrdersTable.Location = new System.Drawing.Point(0, 0);
+            this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.OrdersTable.Location = new System.Drawing.Point(0, 46);
             this.OrdersTable.Name = "OrdersTable";
-            this.OrdersTable.Size = new System.Drawing.Size(620, 282);
+            this.OrdersTable.Size = new System.Drawing.Size(543, 236);
             this.OrdersTable.TabIndex = 0;
             // 
             // toolStrip1
@@ -53,7 +53,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(620, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(543, 43);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -79,11 +79,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 282);
+            this.ClientSize = new System.Drawing.Size(543, 282);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.OrdersTable);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientOrdersForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ClientOrdersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersTable)).EndInit();
             this.toolStrip1.ResumeLayout(false);

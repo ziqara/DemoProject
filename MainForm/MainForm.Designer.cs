@@ -33,7 +33,7 @@
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.editBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.SearchByNameLabel = new System.Windows.Forms.ToolStripLabel();
             this.SearchByNameTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.AlphabetComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.ClientsListBox = new System.Windows.Forms.ListBox();
@@ -47,7 +47,7 @@
             this.addBtn,
             this.deleteBtn,
             this.editBtn,
-            this.toolStripLabel1,
+            this.SearchByNameLabel,
             this.SearchByNameTextBox,
             this.AlphabetComboBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -91,18 +91,17 @@
             this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
-            // toolStripLabel1
+            // SearchByNameLabel
             // 
-            this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(160, 1, 0, 2);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(182, 35);
-            this.toolStripLabel1.Text = "Поиск по названию клиента:";
+            this.SearchByNameLabel.Image = ((System.Drawing.Image)(resources.GetObject("SearchByNameLabel.Image")));
+            this.SearchByNameLabel.Margin = new System.Windows.Forms.Padding(160, 1, 0, 2);
+            this.SearchByNameLabel.Name = "SearchByNameLabel";
+            this.SearchByNameLabel.Size = new System.Drawing.Size(182, 35);
+            this.SearchByNameLabel.Text = "Поиск по названию клиента:";
             // 
             // SearchByNameTextBox
             // 
             this.SearchByNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchByNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchByNameTextBox.Name = "SearchByNameTextBox";
             this.SearchByNameTextBox.Size = new System.Drawing.Size(100, 38);
             this.SearchByNameTextBox.TextChanged += new System.EventHandler(this.SearchByNameTextBox_TextChanged);
@@ -165,6 +164,7 @@
             // 
             this.cardClient.BackColor = System.Drawing.Color.White;
             this.cardClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cardClient.Location = new System.Drawing.Point(229, 40);
             this.cardClient.Name = "cardClient";
             this.cardClient.Size = new System.Drawing.Size(479, 250);
@@ -197,7 +197,7 @@
         private System.Windows.Forms.ToolStripButton addBtn;
         private System.Windows.Forms.ToolStripButton deleteBtn;
         private System.Windows.Forms.ToolStripButton editBtn;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel SearchByNameLabel;
         private System.Windows.Forms.ToolStripTextBox SearchByNameTextBox;
         private System.Windows.Forms.ToolStripComboBox AlphabetComboBox;
         private System.Windows.Forms.ListBox ClientsListBox;
