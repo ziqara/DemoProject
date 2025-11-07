@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DemoLib.DataModel.Clients;
 using DemoLib.DataModel.Orders;
+using DemoLib.DataModel.Users;
 using DemoLib.Models.Clients;
 
 namespace MainForm
@@ -18,17 +19,30 @@ namespace MainForm
         private Client client_;
         private MySQLClientsModel model_;
         List<OrderRecord> orders_;
-        public ClientOrdersForm(Client client, MySQLClientsModel model)
+        private User currentUser_;
+        public ClientOrdersForm(Client client, MySQLClientsModel model, User user)
         {
             InitializeComponent();
             client_ = client;
             model_ = model;
+            currentUser_ = user;
         }
 
         private void ClientOrdersForm_Load(object sender, EventArgs e)
         {
             RefreshOrdersTable();
             this.Text = "Заказы клиента - " + client_.Name;
+
+            ApplyRoleRestrictions();
+        }
+
+        private void ApplyRoleRestrictions()
+        {
+            if (currentUser_ != null && currentUser_.Role == UserRole.Manager)
+            {
+                this.addBtn.Enabled = false;
+                this.deleteBtn.Enabled = false;
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)

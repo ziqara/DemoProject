@@ -73,11 +73,6 @@ namespace MainForm
             }
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private bool isLowRoleUser()
         {
             /// currentUser_ == null - это гость
@@ -264,7 +259,7 @@ namespace MainForm
                 return;
             }
 
-            ClientOrdersForm ordersForm = new ClientOrdersForm(client, model_);
+            ClientOrdersForm ordersForm = new ClientOrdersForm(client, model_, currentUser_);
             ordersForm.Text = "Заказы клиента " + client.Name;
             ordersForm.ShowDialog();
         }
