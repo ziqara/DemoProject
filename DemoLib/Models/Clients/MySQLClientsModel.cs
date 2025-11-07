@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 using DemoLib.DataModel.Clients;
 using DemoLib.DataModel.Orders;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
+using Client = DemoLib.DataModel.Clients.Client;
 
 namespace DemoLib.Models.Clients
 {
     public class MySQLClientsModel : IClientsModel
     {
         private const string connStr = "server=localhost;user=root;database=clients_db;password=1234567;port=3307;";
+        List<Client> clients = new List<Client>();
+
         public int GetClientsCount()
         {
             try
@@ -37,8 +41,6 @@ namespace DemoLib.Models.Clients
 
         public List<Client> ReadAllClients()
         {
-            List<Client> clients = new List<Client>();
-
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connStr))
@@ -90,6 +92,11 @@ namespace DemoLib.Models.Clients
             {
                 throw ex;
             }
+        }
+
+        public int GenerateNextID()
+        {
+            return clients.Count + 1;
         }
     }
 }

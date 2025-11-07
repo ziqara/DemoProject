@@ -89,6 +89,28 @@ namespace MainForm
                 imageBtn.Focus();
                 return;
             }
+
+            if (type_ == 0)
+            {
+                Client addClient = new Client(model_.GenerateNextID());
+                addClient.Name = nameBox.Text;
+                addClient.Description = desBox.Text;
+                addClient.Phone = phoneBox.Text;
+                addClient.Mail = mailBox.Text;
+                addClient.ImagePath = selectedImagePath_;
+                newClient_ = (Client)addClient;
+                DialogResult = DialogResult.OK;
+            }
+
+            if (type_ == 1)
+            {
+                newClient_.Name = nameBox.Text;
+                newClient_.Description = desBox.Text;
+                newClient_.Phone = phoneBox.Text;
+                newClient_.Mail = mailBox.Text;
+                newClient_.ImagePath = selectedImagePath_;
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }
