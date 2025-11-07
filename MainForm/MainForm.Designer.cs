@@ -66,6 +66,7 @@
             this.addBtn.Text = "Добавить";
             this.addBtn.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // deleteBtn
             // 

@@ -98,5 +98,37 @@ namespace DemoLib.Models.Clients
         {
             return clients.Count + 1;
         }
+
+        public void AddClient(Client client)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connStr))
+                {
+
+                    connection.Open();
+                    string addClientSql =
+                                "INSERT INTO clientsinfo (id, clientName, phone, mail, description, imagePath)"
+                                + " VALUES (@id, @clientName, @phone, @mail, @description, @imagePath)";
+
+                    MySqlCommand command = new MySqlCommand(addClientSql, connection);
+
+                    command.Parameters.AddWithValue("@id", client.ID);
+                    command.Parameters.AddWithValue("@clientName", client.Name);
+                    command.Parameters.AddWithValue("@phone", client.Phone);
+                    command.Parameters.AddWithValue("@mail", client.Mail);
+                    command.Parameters.AddWithValue("@description", client.Description);
+                    command.Parameters.AddWithValue("@imagePath", client.ImagePath);
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

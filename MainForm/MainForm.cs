@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
 using ClientCard;
 using DemoLib.DataModel.Clients;
@@ -12,6 +13,7 @@ namespace MainForm
     {
         private List<Client> allClients_ = new List<Client>();
         private User currentUser_ = null;
+        private MySQLClientsModel model_;
         public MainForm(User user)
         {
             currentUser_ = user;
@@ -100,6 +102,24 @@ namespace MainForm
         private void SearchByNameTextBox_TextChanged(object sender, EventArgs e)
         {
             FilterAndSearch();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            AddClientForm addForm = new AddClientForm(model_, 0, null);
+            DialogResult result = addForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                model_.AddClient(addForm.GetNewClient());
+                allClients_.Clear();
+                allClients_ = model_.ReadAllClients();
+                ShowClients(allClients_);
+            }
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
         }
     }
 }
